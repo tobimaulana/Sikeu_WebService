@@ -13,6 +13,7 @@ var biayaPMBRouter = require('./routes/biaya_pmb');
 var biayaTetapRouter = require('./routes/biaya_tetap');
 var jurusanRouter = require('./routes/jurusan');
 var kelasRouter = require('./routes/kelas');
+var siswaRouter = require('./routes/siswa');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/biaya_pmb', biayaPMBRouter);
 app.use('/biaya_tetap', biayaTetapRouter);
 app.use('/jurusan', jurusanRouter);
 app.use('/kelas', kelasRouter);
+app.use('/siswa', siswaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
