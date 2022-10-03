@@ -2,14 +2,10 @@ var express = require('express');
 var router = express.Router();
 var Users = require("../models/users");
 var jwt = require('jsonwebtoken');
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+var cekToken = require("../middleware");
 
 /* TAMPIL DATA USERS */
-router.get('/', function(req, res, next) {
+router.get('/', cekToken, function(req, res, next) {
   Users.findAndCountAll().then( data => {
          res.json({
                 status:true,
@@ -27,7 +23,7 @@ router.get('/', function(req, res, next) {
 
 
 /* TAMBAH DATA USERS */
-router.post('/', function(req, res, next) {
+router.post('/', cekToken, function(req, res, next) {
   Users.create(req.body).then (data => {
          res.json({
                 status:true,
@@ -46,7 +42,7 @@ router.post('/', function(req, res, next) {
 
 
 /* UBAH DATA USERS */
-router.put('/', function(req, res, next) {
+router.put('/', cekToken, function(req, res, next) {
   Users.update(req.body, {
          where:{id:req.body.id}
   }).then( () => {
@@ -67,7 +63,7 @@ router.put('/', function(req, res, next) {
 
 
 /* HAPUS DATA USERS */
-router.delete('/', function(req, res, next) {
+router.delete('/', cekToken, function(req, res, next) {
   Users.destroy({
          where:{id:req.body.id}
   }).then ( () => {
