@@ -41,7 +41,7 @@ router.post('/', function(req, res, next) {
 /* UBAH DATA */
 router.put('/', function(req, res, next) {
        Angkatan.update(req.body, {
-              where:{tahun:req.body.id}
+              where:{tahun:req.body.tahun}
        }).then( () => {
               res.json({
                      status:true,
@@ -60,7 +60,7 @@ router.put('/', function(req, res, next) {
 /* HAPUS DATA */
 router.delete('/', function(req, res, next) {
        Angkatan.destroy({
-              where:{tahun:req.body.id}
+              where:{tahun:req.body.tahun}
        }).then( () => {
               res.json({
                      status:true,
