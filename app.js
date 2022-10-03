@@ -10,6 +10,7 @@ var akunRouter = require('./routes/akun');
 var angkatanRouter = require('./routes/angkatan');
 var biayaLainRouter = require('./routes/biaya_lain');
 var biayaPMBRouter = require('./routes/biaya_pmb');
+var biayaTetapRouter = require('./routes/biaya_tetap');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/akun', akunRouter);
 app.use('/angkatan', angkatanRouter);
 app.use('/biaya_lain', biayaLainRouter);
 app.use('/biaya_pmb', biayaPMBRouter);
+app.use('/biaya_tetap', biayaTetapRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
