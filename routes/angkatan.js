@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// Panggil Model Akun
+// Panggil Model Angkatan
 var Angkatan = require('../models/Angkatan');
 
 /* TAMPIL DATA */

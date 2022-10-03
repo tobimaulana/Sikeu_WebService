@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// Panggil Model Akun
+// Panggil Model Kelas
 var Kelas = require('../models/Kelas');
 
 /* TAMPIL DATA */

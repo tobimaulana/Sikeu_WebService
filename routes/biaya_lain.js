@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// Panggil Model Akun
+// Panggil Model Biaya_Lain
 var Biaya_Lain = require('../models/Biaya_Lain');
 
 /* TAMPIL DATA */

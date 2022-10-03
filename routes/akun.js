@@ -9,13 +9,13 @@ router.get('/', function(req, res, next) {
        Akun.findAll().then( data => {
               res.json({
                      status:true,
-                     pesan:"Berhasil Tampil",
+                     pesan:"Data BERHASIL Tampil",
                      data:data
               });
        }).catch(err => {
               res.json({
                      status:false,
-                     pesan:"Gagal Tampil : " + err.message,
+                     pesan:"Data GAGAL Tampil : " + err.message,
                      data:[]
               });
        });
@@ -26,13 +26,13 @@ router.post('/', function(req, res, next) {
        Akun.create(req.body).then( data => {
               res.json({
                      status:true,
-                     pesan:"Berhasil Tambah",
+                     pesan:"Data BERHASIL Ditambahkan",
                      data:data
               });
        }).catch(err => {
               res.json({
                      status:false,
-                     pesan:"Gagal Tambah : " + err.message,
+                     pesan:"Data GAGAL Ditambahkan : " + err.message,
                      data:[]
               });
        });
@@ -45,13 +45,13 @@ router.put('/', function(req, res, next) {
        }).then( () => {
               res.json({
                      status:true,
-                     pesan:"Berhasil Ubah",
+                     pesan:"Data BERHASIL Diubah",
                      data: []
               });
        }).catch(err => {
               res.json({
                      status:false,
-                     pesan:"Gagal Ubah : " + err.message,
+                     pesan:"Data GAGAL Diubah : " + err.message,
                      data:[]
               });
        });
@@ -64,13 +64,13 @@ router.delete('/', function(req, res, next) {
        }).then( () => {
               res.json({
                      status:true,
-                     pesan:"Berhasil Hapus",
+                     pesan:"Data BERHASIL Dihapus",
                      data: []
               });
        }).catch(err => {
               res.json({
                      status:false,
-                     pesan:"Gagal Hapus : " + err.message,
+                     pesan:"Data GAGAL Dihapus : " + err.message,
                      data:[]
               });
        });

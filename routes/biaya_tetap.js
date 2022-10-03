@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// Panggil Model Akun
+// Panggil Model Biaya_Tetap
 var Biaya_Tetap = require('../models/Biaya_Tetap');
 
 /* TAMPIL DATA */
