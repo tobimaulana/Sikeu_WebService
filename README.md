@@ -8,3 +8,9 @@ Feel free untuk mendownload repository ini. Semoga membantu ✨
 1. Download Node JS (https://nodejs.org/en/download)
 2. Download MySQL (https://www.apachefriends.org/download.html)
 3. Download Postman (https://www.getpostman.com/downloads)
+
+## INSTALL MENGGUNAKAN CMD -> Run As Administrator (TERHUBUNG INTERNET)
+1. Express-generator
+   CMD Command : **npm install -g express-generator**
+2. Nodemon
+   CMD Command : **npm install -g nodemon**
