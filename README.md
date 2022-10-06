@@ -19,3 +19,7 @@ Feel free untuk mendownload repository ini. Semoga membantu ✨
 3. Pindah Ke Folder Project (CMD Command : **cd WebService**)
 4. Install dependencies (CMD Command : **npm install**)
 5. Install Library Koneksi MySQL (CMD Command : **npm install --save sequelize** - Enter - **npm install --save mysql2** - Enter - **npm install --save mariadb** - Enter)
+
+## Menjalankan Project
+1. Untuk menjalankan project (CMD Command : **nodemon npm start**)
+2. Buka Browser: **http://localhost:3000**
