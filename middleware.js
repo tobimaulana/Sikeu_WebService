@@ -12,6 +12,7 @@ var cekToken = function(req, res, next) {
                   
                   Users.findByPk(akunToken.id).then( data => {
                      if(data) {
+                            req.nama = data.nama;
                             next(); //next artinya diperbolehkan lanjut ke proses berikutnya
                      } else {
                             res.json({
