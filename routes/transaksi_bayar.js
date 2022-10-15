@@ -26,6 +26,7 @@ router.post('/', cekToken, function(req, res, next) {
 
        //buat variabel untuk transaksi baru
        var transaksiBayarBaru = {
+              id: req.body.id,
               no_pend: req.body.no_pend, 
               total: req.body.total, 
               keterangan: req.body.keterangan, 
