@@ -14,7 +14,7 @@ var appToken = function(req, res, next) {
        } else {
               res.json({
                      status:false,
-                     pesan: "Maaf, tidak membawa app_toke",
+                     pesan: "Maaf, tidak membawa app_token",
                      data:[]
               });
        }

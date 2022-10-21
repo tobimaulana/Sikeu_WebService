@@ -2,9 +2,13 @@ var express = require('express');
 var router = express.Router();
 var cekToken = require("../middleware");
 
+// Menambahkan import middleware_app
+var appToken = require("../middleware_app");
+
 var koneksi = require("../koneksi");
 var TransaksiBayar = require('../models/Transaksi_Bayar');
 var TransaksiBayarDetail = require('../models/Transaksi_Bayar_Detail');
+const ViewBayar = require('../models/view_bayar');
 
 router.get('/', cekToken, function(req, res, next) {
        TransaksiBayar.findAll().then( data => {
@@ -110,6 +114,36 @@ router.delete('/', function(req,res,next){
                      });
               });
           });
+});
+
+
+// Menambahkan fungsi di routes/transaksi_bayar.js untuk validasi pembayaran berdasarkan id_biaya dan no_pend/id siswa
+// Menambahkan method GET dengan parameter : no_pend, jenis_biaya, dan id_biaya
+router.get('/validasi/:no_pend/:jenis_biaya/:id_biaya', appToken, function(req, res, next){
+
+       var no_pend = req.params.no_pend;
+       var jenis_biaya = req.params.jenis_biaya;
+       var id_biaya = req.params.id_biaya;
+
+       ViewBayar.findAll({
+              where:{
+                     no_pend:no_pend,
+                     jenis_biaya:jenis_biaya,
+                     biaya_id:id_biaya
+              }
+       }).then( data => {
+              res.json({
+                     status:true,
+                     pesan:"Berhasil Tampil",
+                     data:data
+              });
+       }).catch( err => {
+              res.json({
+                     status:false,
+                     pesan: "Gagal Tampil : " + err.message,
+                     data:[]
+              });
+       });
 });
 
 module.exports = router;
