@@ -39,7 +39,7 @@ app.use('/biaya_tetap', biayaTetapRouter);
 app.use('/jurusan', jurusanRouter);
 app.use('/kelas', kelasRouter);
 app.use('/siswa', siswaRouter);
-app.use('/transaksi_bayar', transaksiBayarRouter);
+app.use('/transaksi_bayar', transaksiBayarRouter);  
 app.use('/transaksi_kas', transaksiKasRouter);
 
 // catch 404 and forward to error handler
