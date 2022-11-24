@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+const cekToken = require("../middleware");
 
 // Panggil Model Angkatan
 var Angkatan = require('../models/Angkatan');
 
 /* TAMPIL DATA */
-router.get('/', function(req, res, next) {
+router.get('/', cekToken, function(req, res, next) {
        Angkatan.findAll().then( data => {
               res.json({
                      status:true,
@@ -22,7 +23,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* TAMBAH DATA */
-router.post('/', function(req, res, next) {
+router.post('/', cekToken, function(req, res, next) {
        Angkatan.create(req.body).then( data => {
               res.json({
                      status:true,
@@ -39,7 +40,7 @@ router.post('/', function(req, res, next) {
 });
 
 /* UBAH DATA */
-router.put('/', function(req, res, next) {
+router.put('/', cekToken, function(req, res, next) {
        Angkatan.update(req.body, {
               where:{tahun:req.body.tahun}
        }).then( () => {
@@ -58,7 +59,7 @@ router.put('/', function(req, res, next) {
 });
 
 /* HAPUS DATA */
-router.delete('/', function(req, res, next) {
+router.delete('/', cekToken, function(req, res, next) {
        Angkatan.destroy({
               where:{tahun:req.body.tahun}
        }).then( () => {
