@@ -119,7 +119,7 @@ router.delete('/', function(req,res,next){
 
 // Menambahkan fungsi di routes/transaksi_bayar.js untuk validasi pembayaran berdasarkan id_biaya dan no_pend/id siswa
 // Menambahkan method GET dengan parameter : no_pend, jenis_biaya, dan id_biaya
-router.get('/validasi/:no_pend/:jenis_biaya/:id_biaya', appToken, function(req, res, next){
+router.get('/validasi/:no_pend/:jenis_biaya/:id_biaya', appToken, cekToken, function(req, res, next){
 
        var no_pend = req.params.no_pend;
        var jenis_biaya = req.params.jenis_biaya;
